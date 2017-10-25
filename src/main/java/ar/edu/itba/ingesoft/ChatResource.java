@@ -1,6 +1,5 @@
 package ar.edu.itba.ingesoft;
 
-import io.reactivex.Observer;
 import io.reactivex.subjects.ReplaySubject;
 import io.reactivex.subjects.Subject;
 import org.slf4j.Logger;
@@ -8,21 +7,15 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 /**
@@ -54,25 +47,10 @@ public class ChatResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_HTML)
-    public InputStream main() {
-        try {
-            logger.info(System.getProperty("user.dir"));
-            File f = new File("resources/simple-page.html");
-            return new FileInputStream(f);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @GET
     @Path("chat")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Message> chat(@QueryParam("sessionid") int sessionid) {
         return Optional.ofNullable(clients.get(sessionid))
-//                .map(x -> x.getMessages().stream().map(Message::toString).collect(Collectors.toList()))
-//                .map(List::toString)
                 .map(x -> x.getMessages())
                 .orElseThrow(IllegalArgumentException::new);
     }
