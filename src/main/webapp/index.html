@@ -1,5 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN " " http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<body>
-<h2>Hello World!</h2>
-</body>
+
+  <body ng-app="myApp">
+    <div ng-controller="storeCtrl" id="controller">    
+      <div class="logo" style="
+      text-align: center;
+        padding: 10px; z-index: 2; position: fixed; top: 0px; width: 100%;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        background-color: white;">        
+        <div>
+ 
+          <div style="text-align: center;" id="links">
+
+            <a href="#" onclick="show('pedidos'); return false;"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal Raiesito</span></a>
+       
+
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 81px;"></div>
+      <div class="page" id="mensajes" >
+        <h1>Historial</h1>
+         <div ng-repeat="x in mensajes" class="mensaje {{ x.from != usuario.nombre ? 'mensaje_admin': 'mensaje_cliente'}}">
+          <div>
+              <div>
+                <h3>{{x.from}}</h3>
+               <!-- <h5>{{x.fecha}}</h5> -->
+              </div>
+              <div>
+                {{x.content}}
+              </div>
+            </div>
+        </div>
+        <div class="sub" >    
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea id="mensaje" class="form-control" ng-model="mensaje" style="width: 95%; height: 100px;"></textarea>
+          </div>
+        </div>
+        
+        <div class="buttons" style="margin-bottom: 60px;">
+          <button ng-click="enviarMensaje()">Enviar mensaje</button>
+        </div>
+        
+      </div>
+
+      <div id="modal" style=" position: absolute; top: 250px; width: 100%;">
+        <div style="width: 250px; margin: 10px auto; border-radius: 5px; background-color: white; xborder: 1px solid #ddd;
+          padding: 20px 15px; text-align: center;
+          box-shadow: 0px 0px 11px 4px rgba(0,0,0,0.5); z-index: 9999;">
+          <div class="form-group">
+                <label>Ingresa tu usuario</label>
+                <input ng-model="usuario.nombre" required="required" class="form-control">
+          </div>
+
+
+         <div class="buttonsCambioContrasena">
+                <button ng-click="asignarUsuario()"  class="btn btn-primary " >Ingresar</button>
+          </div>
+          
+        </div>
+      </div>
+
+      
+    </div>
+
+  </body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta http-equiv="Cache-Control" content="no-store" />    
+    <title>Demo Inge 2</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/d9a3df38fe.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/services.js"></script>
+    <link rel="stylesheet" href="client.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+  </head>
 </html>

@@ -1,0 +1,72 @@
+html, body {
+	margin: 0px;
+	font-family: 'Lato';
+	overflow-x: hidden;
+	background-color: white; /*#3D3D3F;*/
+}	
+		
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(roboto2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+div.container, div.page, #institucionalImage { width: 700px; margin: 0px auto;}
+div.page { background-color: white; }
+
+h1 { background-color: #A80E19; color: white; margin: 0px; padding: 10px 16px; margin-top: 58px; 
+	text-transform: uppercase; font-size: 15px; font-weight: normal;}
+h2 { background-color: #ccc; color: #A80E19; margin: 0px; padding: 6px 16px; 
+	text-transform: uppercase; font-size: 13px; font-weight: normal;}
+	
+button {background-color: #3D3D3F; color: white; border: 0px; padding: 6px 9px;
+	text-transform: uppercase;  border-radius: 0px; font-size: 12px;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);}
+div.buttons button, div.producto button,div.buttonsContrasena button ,div.buttonsCambioContrasena button ,div.buttonsMail button {background-color: #A80E19; color: white; border-radius: 2px;box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75); }
+div.buttons button.secondary ,div.buttonsContrasena button.secondary,div.buttonsCambioContrasena button.secondary{background-color: #3D3D3F; color: white; }
+div.buttonsContrasena{margin-top:15px;margin-left:170px;}
+div.buttonsMail{margin-top:15px;margin-left:260px;}
+div.buttonsCambioContrasena{margin-top:15px;}
+button#logout{  margin:0 auto; display:block; width:180px;height:45px;font-size:14px;margin-top:-20px;border-radius:4px;}
+
+
+div.buttons { clear: both; background-color: #ccc; padding: 10px;
+	text-align: right;}
+
+div.form-group label { display: block;margin-top: 22px; color: #3D3D3F; font-size: 12px; text-transform: uppercase;} 
+input.form-control { width: 90%; padding: 7px; border: 1px solid #eee; border-bottom: 3px solid #A80E19; }
+input.form-control:focus, textarea:focus  {box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); outline: none;}
+textarea { padding: 4px; border: 1px solid #eee; border-bottom: 3px solid #A80E19; }
+div.texto {font-size: 13px;color: #555; margin-top: 20px;}
+div.texto a { text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: #eee;
+    padding: 3px; font-size: 10px;
+    border-radius: 4px; } 
+
+
+
+
+div.mensaje h3, div.mensaje h5 { font-weight: normal; margin: 0px; }
+div.mensaje { margin: 10px; padding: 10px; border-radius: 3px; width: 250px; }
+div.mensaje_admin { background-color: #673A15; color: white; }
+div.mensaje_cliente { background-color: #ccc; margin-left: 200px; }
+div.mensaje h3 { font-size: 11px; }
+div.mensaje h5 { font-size: 12px; }  
+
+div.cliente{float:right}
+
+div.admin{padding-left:5%;}
+span.bold{font-weight:bold;}
+
+div.divCampos{margin-bottom:25px;}
+div.divCampos span.valor{margin-left:25px;}
+div.divCampos span.labelDatos{display:inline-block;width:50px;}
+
+
+
+

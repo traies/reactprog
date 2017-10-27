@@ -19,8 +19,22 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
 
+  <servlet>
+    <servlet-name>socket-servlet</servlet-name>
+
+    <servlet-class>
+      ar.edu.itba.ingesoft.ChatSocketServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>jersey-servlet</servlet-name>
     <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>socket-servlet</servlet-name>
+    <url-pattern>/socket/*</url-pattern>
   </servlet-mapping>
 </web-app>
