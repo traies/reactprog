@@ -12,7 +12,7 @@
  
           <div style="text-align: center;" id="links">
 
-            <a href="#" onclick="show('pedidos'); return false;"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal Raiesito</span></a>
+            <a href="#" ><i class="fa fa-bandcamp"></i><span class="hidden-xs">{{canal.nombre}}</span></a>
        
 
           </div>
@@ -20,16 +20,17 @@
       </div>
 
       <div style="height: 81px;"></div>
+      <div style="display:inline;">
       <div class="page" id="mensajes" >
-        <h1>Historial</h1>
-         <div ng-repeat="x in mensajes" class="mensaje {{ x.from != usuario.nombre ? 'mensaje_admin': 'mensaje_cliente'}}">
+        <h1>Mensajes</h1>
+         <div ng-repeat="x in mensajes" class="mensaje {{ x.author != usuario.nombre ? 'mensaje_admin': 'mensaje_cliente'}}">
           <div>
               <div>
-                <h3>{{x.from}}</h3>
+                <h3>{{x.author}}</h3>
                <!-- <h5>{{x.fecha}}</h5> -->
               </div>
               <div>
-                {{x.content}}
+                {{x.text}}
               </div>
             </div>
         </div>
@@ -46,6 +47,22 @@
         
       </div>
 
+      <div style="float:left;margin-left: 2%;" id="linksChannels">
+        <ul>
+          <li class="selected"><a href="#" ng-click="cambiarCanal(1,'Canal 1')" ><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 1</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(2,'Canal 2')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 2</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(3,'Canal 3')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 3</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(4,'Canal 4')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 4</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(5,'Canal 5')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 5</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(6,'Canal 6')" ><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 6</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(7,'Canal 7')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 7</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(8,'Canal 8')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 8</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(9,'Canal 9')"><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 9</span></a></li>
+          <li><a href="#" ng-click="cambiarCanal(10,'Canal 10')" ><i class="fa fa-bandcamp"></i><span class="hidden-xs">Canal 10</span></a></li>
+        </ul>
+      </div>
+      </div>
+
       <div id="modal" style=" position: absolute; top: 250px; width: 100%;">
         <div style="width: 250px; margin: 10px auto; border-radius: 5px; background-color: white; xborder: 1px solid #ddd;
           padding: 20px 15px; text-align: center;
@@ -54,7 +71,6 @@
                 <label>Ingresa tu usuario</label>
                 <input ng-model="usuario.nombre" required="required" class="form-control">
           </div>
-
 
          <div class="buttonsCambioContrasena">
                 <button ng-click="asignarUsuario()"  class="btn btn-primary " >Ingresar</button>

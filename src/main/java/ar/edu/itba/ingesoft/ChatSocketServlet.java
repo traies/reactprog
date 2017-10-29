@@ -12,7 +12,8 @@ import javax.servlet.annotation.WebServlet;
 public class ChatSocketServlet extends WebSocketServlet {
     @Override
     public void configure(WebSocketServletFactory webSocketServletFactory) {
-        System.out.println("caca");
+        System.out.println("entro3");
         webSocketServletFactory.register(ChatSocket.class);
     }
+
 }
