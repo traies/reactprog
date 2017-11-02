@@ -17,7 +17,7 @@ div#links ,div#linksChannels{ font-size: 12px; padding-top: 10px; }
 div#links a ,div#linksChannels a{ color: #3D3D3F; text-decoration: none; padding: 0px; text-transform: uppercase; }
 div#links a span, div#linksChannels a span { color: #3D3D3F; text-decoration: none; padding: 10px; padding-left: 3px; text-shadow: 0 1px 1px #ccc;}
 
-div#linksChannels li{margin-bottom: 4px;font-size: 12px;  list-style: none; }
+div#linksChannels li{margin-bottom: 10px;font-size: 12px;  list-style: none; }
 div#linksChannels li.selected{font-weight: bold; }
 div.container, div.page, #institucionalImage { width: 700px; float:left;margin-left: 28%;margin-top: -3%}
 div.page { background-color: white; }

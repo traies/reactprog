@@ -23,8 +23,8 @@ public class ChatSocket {
         Integer chatId = new Integer(params[0].split("=")[1]);
         String username = params[1].split("=")[1];
         UserClient user = new UserClient(session,username,chatId);
-        ChannelManager.getInstance().getChannel(chatId).subscribe(user);
-        ChannelManager.getInstance().getChannel(chatId).onNext(new Message(username, "Entered Chat"));
+        ChannelManager.getInstance().getObservable(chatId).subscribe(user);
+//        ChannelManager.getInstance().getChannel(chatId).onNext(new Message(username, "Entered Chat"));
         ChannelManager.getInstance().getClients().put(session,user);
         ChannelManager.getInstance().getClientsChannels().put(session,chatId);
 
@@ -33,7 +33,7 @@ public class ChatSocket {
     @OnWebSocketClose
     public void onClose(Session session,int a , String b){
         UserClient user = ChannelManager.getInstance().getClients().get(session);
-        ChannelManager.getInstance().getChannel(user.getChatId()).onNext(new Message(user.getUsername(), "Left Chat"));
+//        ChannelManager.getInstance().getChannel(user.getChatId()).onNext(new Message(user.getUsername(), "Left Chat"));
         ChannelManager.getInstance().getClients().get(session).getDisposable().dispose();
         ChannelManager.getInstance().getClientsChannels().remove(session);
         ChannelManager.getInstance().getClients().remove(session);

@@ -10,7 +10,7 @@ angular.module('myApp.controller', ['myApp.services'])
     $scope.mensajesNuevos = 0;
     $scope.canal = {};
     $scope.canal.id = "1";
-    $scope.canal.nombre = "Canal 1";
+    $scope.canal.nombre = "Canal A";
 
     
 
